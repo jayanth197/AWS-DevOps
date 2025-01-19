@@ -1,35 +1,3 @@
-Git
-Build
-Testing
-Artifactory
-Deployment
-
-
-pipeline {
-    agent any
-    stages {
-        stage('Git') {
-            steps {
-                git url: https://github.com/repo-url
-            }
-        }
-        stage('build') {
-            steps {
-                sh 'maven clean install package'
-            }
-        }
-        stage('Testing') {
-            steps {
-                Junit 'test.xml'
-            }
-        }
-    }
-}
-
-
-Publish Over SSh Using Groovy Script
-
-
 pipeline {
     agent any
     stages {
